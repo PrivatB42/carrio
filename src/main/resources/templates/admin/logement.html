@@ -1,0 +1,308 @@
+<!doctype html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Data Table | Notika - Notika Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="/admin/img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+    <!-- font awesome CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/owl.carousel.css">
+    <link rel="stylesheet" href="/admin/css/owl.theme.css">
+    <link rel="stylesheet" href="/admin/css/owl.transitions.css">
+    <!-- meanmenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/animate.css">
+    <!-- summernote CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/summernote/summernote.css">
+    <!-- Range Slider CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/themesaller-forms.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/normalize.css">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/admin/css/wave/waves.min.css">
+    <link rel="stylesheet" href="/admin/css/wave/button.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/notika-custom-icon.css">
+    <!-- Data Table JS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/jquery.dataTables.min.css">
+    <!-- bootstrap select CSS
+         ============================================ -->
+    <link rel="stylesheet" href="/admin/css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/color-picker/farbtastic.css">
+    <!-- notification CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/notification/notification.css">
+    <!-- dropzone CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/dropzone/dropzone.css">
+    <!-- wave CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/wave/waves.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/main.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/admin/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/admin/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Start Header Top Area -->
+<section th:replace="/admin/index :: header"></section>
+<!-- Main Menu area End-->
+<!-- Breadcomb area Start-->
+<form th:action="@{'/'+${testText}}"
+      th:with="testText=${T(com.bindeprivat.carrio.utils.Constants).SAVE_LOGEMENT_ENDPOINT}"
+      method="post" th:object="${logement}" >
+    <div class="form-example-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-example-wrap mg-t-30">
+                        <div class="cmp-tb-hd cmp-int-hd">
+                            <h2>Ajouter un logement</h2>
+                        </div>
+                        <input hidden type="text" class="form-control input-sm" placeholder="Nom" th:field="*{idLogement}">
+                        <div class="form-example-int form-horizental">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Nom du logement</label>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <input type="text" class="form-control input-sm" placeholder="Nom" th:field="*{nomLogement}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-example-int form-horizental mg-t-15">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Type de logement</label>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <input type="text" class="form-control input-sm" placeholder="Type" th:field="*{typeLogement}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-example-int form-horizental mg-t-15">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                        <label class="hrzn-fm">Cout du loyer</label>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                        <div class="nk-int-st">
+                                            <input type="number" class="form-control input-sm" placeholder="cout" th:field="*{coutLoyer}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="form-example-int form-horizental mg-t-15">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="fm-checkbox">
+                                        <label><input type="checkbox" class="i-checks"> <i></i> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="form-example-int mg-t-15">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                </div>
+                                <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="dialog-pro dialog">
+                                        <button class="btn btn-success notika-btn-success" id="sa-success">Enregistrer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Start Footer area-->
+<div class="footer-copyright-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="footer-copy-right">
+                    <p>Copyright © 2018
+                        . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Footer area-->
+<script src="/admin/js/vendor/jquery-1.12.4.min.js">
+    $(document).ready(function() {
+        $('body').click(function() {
+            $('.dohide').attr("hidden", true);
+        });
+    });
+</script>
+
+<!-- jquery
+    ============================================ -->
+<script src="/admin/js/vendor/jquery-1.12.4.min.js"></script>
+<!-- bootstrap JS
+    ============================================ -->
+<script src="/admin/js/bootstrap.min.js"></script>
+<!-- wow JS
+    ============================================ -->
+<script src="/admin/js/wow.min.js"></script>
+<!-- price-slider JS
+    ============================================ -->
+<script src="/admin/js/jquery-price-slider.js"></script>
+<!-- owl.carousel JS
+    ============================================ -->
+<script src="/admin/js/owl.carousel.min.js"></script>
+<!-- scrollUp JS
+    ============================================ -->
+<script src="/admin/js/jquery.scrollUp.min.js"></script>
+<!-- meanmenu JS
+    ============================================ -->
+<script src="/admin/js/meanmenu/jquery.meanmenu.js"></script>
+<!-- counterup JS
+    ============================================ -->
+<script src="/admin/js/counterup/jquery.counterup.min.js"></script>
+<script src="/admin/js/counterup/waypoints.min.js"></script>
+<script src="/admin/js/counterup/counterup-active.js"></script>
+<!-- mCustomScrollbar JS
+    ============================================ -->
+<script src="/admin/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- sparkline JS
+    ============================================ -->
+<script src="/admin/js/sparkline/jquery.sparkline.min.js"></script>
+<script src="/admin/js/sparkline/sparkline-active.js"></script>
+<!-- flot JS
+    ============================================ -->
+<script src="/admin/js/flot/jquery.flot.js"></script>
+<script src="/admin/js/flot/jquery.flot.resize.js"></script>
+<script src="/admin/js/flot/flot-active.js"></script>
+<!-- knob JS
+    ============================================ -->
+<script src="/admin/js/knob/jquery.knob.js"></script>
+<script src="/admin/js/knob/jquery.appear.js"></script>
+<script src="/admin/js/knob/knob-active.js"></script>
+<!--  Chat JS
+    ============================================ -->
+<script src="/admin/js/chat/jquery.chat.js"></script>
+<!-- Input Mask JS
+		============================================ -->
+<script src="/admin/js/jasny-bootstrap.min.js"></script>
+<!-- icheck JS
+    ============================================ -->
+<script src="/admin/js/icheck/icheck.min.js"></script>
+<script src="/admin/js/icheck/icheck-active.js"></script>
+<!-- rangle-slider JS
+    ============================================ -->
+<script src="/admin/js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="/admin/js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+<script src="/admin/js/rangle-slider/rangle-active.js"></script>
+<!-- datapicker JS
+    ============================================ -->
+<script src="/admin/js/datapicker/bootstrap-datepicker.js"></script>
+<script src="/admin/js/datapicker/datepicker-active.js"></script>
+<!-- bootstrap select JS
+    ============================================ -->
+<script src="/admin/js/bootstrap-select/bootstrap-select.js"></script>
+<!--  color-picker JS
+    ============================================ -->
+<script src="/admin/js/color-picker/farbtastic.min.js"></script>
+<script src="/admin/js/color-picker/color-picker.js"></script>
+<!--  notification JS
+    ============================================ -->
+<script src="/admin/js/notification/bootstrap-growl.min.js"></script>
+<script src="/admin/js/notification/notification-active.js"></script>
+<!--  summernote JS
+    ============================================ -->
+<script src="/admin/js/summernote/summernote-updated.min.js"></script>
+<script src="/admin/js/summernote/summernote-active.js"></script>
+<!-- dropzone JS
+    ============================================ -->
+<script src="/admin/js/dropzone/dropzone.js"></script>
+<!--  wave JS
+    ============================================ -->
+<script src="/admin/js/wave/waves.min.js"></script>
+<script src="/admin/js/wave/wave-active.js"></script>
+<!--  chosen JS
+    ============================================ -->
+<script src="/admin/js/chosen/chosen.jquery.js"></script>
+<!--  Chat JS
+    ============================================ -->
+<script src="/admin/js/chat/jquery.chat.js"></script>
+<!--  todo JS
+    ============================================ -->
+<script src="/admin/js/todo/jquery.todo.js"></script>
+<!-- plugins JS
+============================================ -->
+<script src="/admin/js/plugins.js"></script>
+<!-- Data Table JS
+    ============================================ -->
+<script src="/admin/js/data-table/jquery.dataTables.min.js"></script>
+<script src="/admin/js/data-table/data-table-act.js"></script>
+<!-- main JS
+    ============================================ -->
+<script src="/admin/js/main.js"></script>
+<!-- tawk chat JS
+    ============================================ -->
+<script src="/admin/js/tawk-chat.js"></script>
+</body>
+
+</html>

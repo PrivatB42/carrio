@@ -1,0 +1,73 @@
+package com.bindeprivat.carrio.utils;
+
+public interface Constants {
+
+
+    String APP_ROOT = "carrio";
+
+    String USER_ROOT = APP_ROOT+ "/user";
+
+
+    String ETUDIANT_ENDPOINT = APP_ROOT + "/etudiant";
+    String LISTE_ETUDIANTS_ENDPOINT = ETUDIANT_ENDPOINT + "/liste";
+    String CREATE_ETUDIANTS_ENDPOINT = ETUDIANT_ENDPOINT + "/create";
+    String SAVE_ETUDIANTS_ENDPOINT = ETUDIANT_ENDPOINT + "/save";
+    String DELETE_ETUDIANTS_ENDPOINT = ETUDIANT_ENDPOINT + "/{id}";
+
+
+    String INSCRIPTION_ENDPOINT = ETUDIANT_ENDPOINT + "/inscription";
+    String SAVE_INSCRIPTION_ENDPOINT = INSCRIPTION_ENDPOINT + "/save";
+    String DELETE_INSCRIPTION_ENDPOINT = INSCRIPTION_ENDPOINT + "/{id}";
+
+
+    String ENSEIGNANT_ENDPOINT = APP_ROOT + "/enseignant";
+    String LISTE_ENSEIGNANTS_ENDPOINT = ENSEIGNANT_ENDPOINT + "/liste";
+    String CREATE_ENSEIGNANTS_ENDPOINT = ENSEIGNANT_ENDPOINT + "/create";
+    String SAVE_ENSEIGNANTS_ENDPOINT = ENSEIGNANT_ENDPOINT + "/save";
+    String DELETE_ENSEIGNANTS_ENDPOINT = ENSEIGNANT_ENDPOINT + "/{id}";
+
+
+    String FILIERE_ENDPOINT = APP_ROOT + "/filiere";
+    String SAVE_FILIERE_ENDPOINT = FILIERE_ENDPOINT + "/save";
+    String DELETE_FILIERE_ENDPOINT = FILIERE_ENDPOINT + "/{id}";
+
+
+    String COURS_ENDPOINT = APP_ROOT + "/cours";
+    String SAVE_COURS_ENDPOINT = COURS_ENDPOINT + "/save";
+    String DELETE_COURS_ENDPOINT = COURS_ENDPOINT + "/{id}";
+
+
+    String LIVRE_ENDPOINT = APP_ROOT + "/livre";
+    String SAVE_LIVRE_ENDPOINT = LIVRE_ENDPOINT + "/save";
+    String DELETE_LIVRE_ENDPOINT = LIVRE_ENDPOINT + "/{id}";
+
+
+    String CATEGORIE_ENDPOINT = APP_ROOT + "/categorie";
+    String SAVE_CATEGORIE_ENDPOINT = CATEGORIE_ENDPOINT + "/save";
+    String DELETE_CATEGORIE_ENDPOINT = CATEGORIE_ENDPOINT + "/{id}";
+
+
+    String EXEMPLAIRE_ENDPOINT = APP_ROOT + "/exemplaire";
+    String SAVE_EXEMPLAIRE_ENDPOINT = EXEMPLAIRE_ENDPOINT + "/save";
+    String DELETE_EXEMPLAIRE_ENDPOINT = EXEMPLAIRE_ENDPOINT + "/{id}";
+
+
+    String DEMANDE_EMPRUNT_ENDPOINT = APP_ROOT + "/demannde-emprunt";
+    String LIVRE_EMPRUNT_ENDPOINT = APP_ROOT + "/livre-emprunt";
+
+
+    String LOGEMENT_ENDPOINT = APP_ROOT + "/logement-adt";
+    String LOGEMENT_LISTE_ENDPOINT = LOGEMENT_ENDPOINT + "/liste";
+    String SAVE_LOGEMENT_ENDPOINT = LOGEMENT_ENDPOINT + "/save";
+    String DELETE_LOGEMENT_ENDPOINT = LOGEMENT_ENDPOINT + "/{id}";
+
+
+    String RESIDENT_ENDPOINT = APP_ROOT + "/resident";
+    String SAVE_RESIDENT_ENDPOINT = RESIDENT_ENDPOINT + "/save";
+    String DELETE_RESIDENT_ENDPOINT = RESIDENT_ENDPOINT + "/{id}";
+
+
+
+
+
+}
